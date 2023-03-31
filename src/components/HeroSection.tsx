@@ -8,14 +8,13 @@ export const HeroSection = ({ img, name }: HeroSectionData) => {
         <Wrapper>
             <div className="container grid grid-two-column">
                 <div className="section-hero-data">
-                    <p className="hero-top-data">THIS IS ME</p>
+                    <p className="hero-top-data">esse sou eu</p>
                     <h1 className="hero-heading">{name}</h1>
                     <p className="hero-para">
-                        I'm {name}. A Full stack Developer, youtuber and freelancer. A Full
-                        stack Developer, youtuber and freelancer.
+                        Me chamo {name}, tenho 20 anos. Estudante de Eng. De Software, programador e apaixonado por tecnologia. Um dev. FullStack focado na stack de JavaScript. 
                     </p>
                     <Button className="btn hireme-btn">
-                        <NavLink to="/contact"> hire me </NavLink>
+                        <NavLink to="/contact"> contratar </NavLink>
                     </Button>
                 </div>
                 <div className="section-hero-image">

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Navbar = () => {
 
-    const navItems: string[] = ['/', 'about', 'services', 'contact']
+    const navItems: string[] = ['/', 'sobre', 'projetos', 'contato']
 
     return (
         <Nav>
