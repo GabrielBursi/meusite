@@ -3,6 +3,7 @@ import { Main } from "./layout"
 import { About, Contact, Error, Home, Services } from "./pages"
 import { DefaultTheme, ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
+import { ContextAppProvider } from "./context";
 
 const router = createBrowserRouter([
   {
@@ -62,10 +63,12 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle/>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <ContextAppProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle/>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ContextAppProvider>
   )
 }
 
