@@ -1,16 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../styles';
+import { HeroSectionData } from '../types';
 
-export const HeroSection = () => {
+export const HeroSection = ({ img, name }: HeroSectionData) => {
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
                 <div className="section-hero-data">
                     <p className="hero-top-data">THIS IS ME</p>
-                    <h1 className="hero-heading">Gabriel</h1>
+                    <h1 className="hero-heading">{name}</h1>
                     <p className="hero-para">
-                        I'm Gabriel. A Full stack Developer, youtuber and freelancer. A Full
+                        I'm {name}. A Full stack Developer, youtuber and freelancer. A Full
                         stack Developer, youtuber and freelancer.
                     </p>
                     <Button className="btn hireme-btn">
@@ -19,7 +20,7 @@ export const HeroSection = () => {
                 </div>
                 <div className="section-hero-image">
                     <picture>
-                        <img src='https://raw.githubusercontent.com/thapatechnical/reactmultipage/b27bff8403d3729dcd652cff79d85c878a3f211a/public/images/hero.svg' alt="hero image" className="hero-img " />
+                        <img src={img} alt="hero image" className="hero-img " />
                     </picture>
                 </div>
             </div>
