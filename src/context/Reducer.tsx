@@ -14,19 +14,12 @@ export const reducer = (state: State, action: Action) => {
             img: action.payload.img,
         };
     }
-
-    if (action.type === "GET_SERVICES") {
-        return {
-            ...state,
-            services: action.payload,
-        };
-    }
-
+    
     return state;
 };
 
 type Action = {
-    type: "GET_SERVICES" | "ABOUT_UPDATE" | "HOME_UPDATE",
+    type: "ABOUT_UPDATE" | "HOME_UPDATE",
     payload: {
         name: string, 
         img: string
