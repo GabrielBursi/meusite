@@ -1,9 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../styles';
-import { HeroSectionData } from '../types';
+import { useContext } from 'react';
+import { ContextApp } from '../context';
 
-export const HeroSection = ({ img, name }: HeroSectionData) => {
+export const HeroSection = () => {
+
+    const { name, img } = useContext(ContextApp)
+
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
