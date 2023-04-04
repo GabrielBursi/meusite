@@ -18,13 +18,13 @@ export const Footer = () => {
             <section className="contact-short">
                 <div className="grid grid-two-column">
                     <div>
-                        <h3>Ready to get started?</h3>
-                        <h3>Talk to us today</h3>
+                        <h3>Venha conhecer meu trabalho</h3>
+                        <h3>ainda hoje.</h3>
                     </div>
 
                     <div className="contact-short-btn">
                         <NavLink to="/">
-                            <Button>Get Started</Button>
+                            <Button>começar</Button>
                         </NavLink>
                     </div>
                 </div>
