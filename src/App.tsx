@@ -1,9 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { DefaultTheme, ThemeProvider } from "styled-components";
 import { Main } from "./layout"
 import { About, Contact, Error, Home, Services } from "./pages"
-import { DefaultTheme, ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./GlobalStyle";
 import { ContextAppProvider } from "./context";
+import { GlobalStyle } from "./GlobalStyle";
 
 const router = createBrowserRouter([
   {
