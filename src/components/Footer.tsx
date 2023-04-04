@@ -23,7 +23,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="contact-short-btn">
-                        <NavLink to="/">
+                        <NavLink to="/projetos">
                             <Button>começar</Button>
                         </NavLink>
                     </div>

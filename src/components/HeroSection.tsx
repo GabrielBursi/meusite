@@ -18,7 +18,7 @@ export const HeroSection = () => {
                         Me chamo {name}, tenho 20 anos. Estudante de Eng. De Software, programador e apaixonado por tecnologia. Um dev. FullStack focado na stack de JavaScript. 
                     </p>
                     <Button className="btn hireme-btn">
-                        <NavLink to="/contact"> contratar </NavLink>
+                        <NavLink to="/contato"> contratar </NavLink>
                     </Button>
                 </div>
                 <div className="section-hero-image">

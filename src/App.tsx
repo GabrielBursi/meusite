@@ -4,6 +4,7 @@ import { Main } from "./layout"
 import { About, Contact, Error, Home, Services } from "./pages"
 import { ContextAppProvider } from "./context";
 import { GlobalStyle } from "./GlobalStyle";
+import { GoToTop } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,7 @@ function App() {
     <ContextAppProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyle/>
+        <GoToTop/>
         <RouterProvider router={router} />
       </ThemeProvider>
     </ContextAppProvider>
