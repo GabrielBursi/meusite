@@ -1,60 +1,76 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import styled from "styled-components";
+import { CgMenu, CgCloseR } from "react-icons/cg";
 
 export const Navbar = () => {
 
     const navItems: string[] = ['/', 'sobre', 'projetos', 'contato']
 
+    const [openMenu, setOpenMenu] = useState(false);
+
     return (
         <Nav>
-            <div className="menuIcon">
+            <div className={openMenu ? "menuIcon active" : "menuIcon"}>
                 <ul className="navbar-list">
                     {navItems.map(item => (
                         <li key={item}>
-                            <NavLink to={item} className='navbar-link'>
+                            <NavLink to={item} className='navbar-link' onClick={() => setOpenMenu(false)}>
                                 {item === '/' ? 'Home' : item[0].toUpperCase() + item.substring(1)}
                             </NavLink>
                         </li>
                     ))}
                 </ul>
+                <div className="mobile-navbar-btn">
+                    <CgMenu
+                        name="menu-outline"
+                        className="mobile-nav-icon"
+                        onClick={() => setOpenMenu(true)}
+                    />
+                    <CgCloseR
+                        name="close-outline"
+                        className="close-outline mobile-nav-icon"
+                        onClick={() => setOpenMenu(false)}
+                    />
+                </div>
             </div>
         </Nav>
     )
 }
 
 const Nav = styled.nav`
-.navbar-list {
-    display: flex;
-    gap: 4.8rem;
+    .navbar-list {
+        display: flex;
+        gap: 4.8rem;
         li {
             list-style: none;
             .navbar-link {
-            &:link,
-            &:visited {
-                display: inline-block;
-                text-decoration: none;
-                font-size: 1.8rem;
-                text-transform: uppercase;
-                color: ${({ theme }) => theme.colors.black};
-                transition: color 0.3s linear;
-            }
-            &:hover,
-            &:active {
-                color: ${({ theme }) => theme.colors.helper};
-            }
+                &:link,
+                &:visited {
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                    color: ${({ theme }) => theme.colors.black};
+                    transition: color 0.3s linear;
+                }
+                &:hover,
+                &:active {
+                    color: ${({ theme }) => theme.colors.helper};
+                }
             }
         }
-        }
-        .mobile-navbar-btn {
-            display: none;
+    }
+    .mobile-navbar-btn {
+        display: none;
         .close-outline {
             display: none;
         }
-        }
-        .mobile-navbar-btn[name="close-outline"] {
-            display: none;
-        }
-        @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    }
+    .mobile-navbar-btn[name="close-outline"] {
+        display: none;
+    }
+    @media (max-width: ${({ theme }) => theme.media.mobile}) {
         .mobile-navbar-btn {
             display: inline-block;
             z-index: 999;
@@ -78,8 +94,6 @@ const Nav = styled.nav`
             flex-direction: column;
             text-align: center;
             transform: translateX(100%);
-            visibility: hidden;
-            opacity: 0;
             li {
                 .navbar-link {
                     &:link,
@@ -90,7 +104,7 @@ const Nav = styled.nav`
                     &:active {
                         color: ${({ theme }) => theme.colors.helper};
                     }
-            }
+                }
             }
         }
         .active .mobile-nav-icon {
