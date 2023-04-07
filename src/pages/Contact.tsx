@@ -11,7 +11,7 @@ export const Contact = () => {
                     <h2 className="whatsapp"> 
                         <BsWhatsapp/>
                         <a
-                            href="https://wa.me/5544998811555?text=Obrigado+por+entrar+em+contato+comigo%21+Assim+que+poss%C3%ADvel+vou+responder."
+                            href="https://wa.me/5544998811555?text=Ol%C3%A1+Gabriel%2C+estava+dando+uma+olhada+no+seu+Portf%C3%B3lio+e+achei+bem+legal%21++"
                             target="_blank"
                             rel="noopener"
                         >
