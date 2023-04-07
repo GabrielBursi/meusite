@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
 import { Button } from "../styles";
 
 export const Footer = () => {
@@ -87,8 +88,16 @@ export const Footer = () => {
                     </div>
 
                     <div className="footer-contact">
-                        <h3>Telefone</h3>
-                        <h3>+44 9 9881-1555</h3>
+                        <h3><BsWhatsapp /> WhatsApp </h3>
+                        <h3>
+                            <a 
+                                href="https://wa.me/5544998811555?text=Obrigado+por+entrar+em+contato+comigo%21+Assim+que+poss%C3%ADvel+vou+responder." 
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                44 9 9881-1555
+                            </a>
+                        </h3>
                     </div>
                 </div>
 
@@ -155,6 +164,20 @@ const Wrapper = styled.section`
                 color: ${({ theme }) => theme.colors.hr};
                 height: 0.1px;
             }
+        }
+        .footer-contact h3 {
+            display: flex;
+            justify-content: start;
+            gap: 4%;
+            align-items: center;
+            a{
+                    text-decoration: none;
+                    color: #fff;
+                    cursor: pointer;
+                    &:visited{
+                        color: #fff;
+                    }
+                }
         }
     }
     @media (max-width: ${({ theme }) => theme.media.mobile}) {

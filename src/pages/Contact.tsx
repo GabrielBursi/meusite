@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {BsWhatsapp} from 'react-icons/bs'
 
 export const Contact = () => {
     return (
@@ -7,7 +8,16 @@ export const Contact = () => {
 
             <div className="container">
                 <div className="contact-form">
-                    <h2>+44 9 9881-1555</h2>
+                    <h2 className="whatsapp"> 
+                        <BsWhatsapp/>
+                        <a
+                            href="https://wa.me/5544998811555?text=Obrigado+por+entrar+em+contato+comigo%21+Assim+que+poss%C3%ADvel+vou+responder."
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            44 9 9881-1555
+                        </a>
+                    </h2>
                     <form
                         action="https://formspree.io/f/mwkjrajg"
                         method="POST"
@@ -63,9 +73,21 @@ const Wrapper = styled.section`
             max-width: 50rem;
             margin: auto;
             margin-bottom: 2%;
-            h2{
+            .whatsapp{
+                display: flex;
+                justify-content: center;
+                gap: 4%;
+                align-items: center;
                 margin-bottom: 5%;
                 font-weight: 100;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;
+                    &:visited{
+                        color: black;
+                    }
+                }
             }
             .contact-inputs {
                 display: flex;
