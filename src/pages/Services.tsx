@@ -14,14 +14,18 @@ export const Services = () => {
                     return (
                         <div key={id} className="card">
                             <figure>
-                                <img src={img} alt={name} />
+                                <img src={img} alt={name}/>
                             </figure>
-                            <div className="card-data">
-                                <h3>{name}</h3>
-                                <p>{description}</p>
-                                <NavLink to={link} target="_blank">
-                                    <Button className="btn">Acessar site</Button>
-                                </NavLink>
+                            <div className="card-data-wrapper">
+                                <div className="card-data">
+                                    <h3>{name}</h3>
+                                    <div className="description-wrapper">
+                                        <p>{description}</p>
+                                    </div>
+                                    <NavLink to={link} target="_blank">
+                                        <Button className="btn">Acessar site</Button>
+                                    </NavLink>
+                                </div>
                             </div>
                         </div>
                     );
@@ -38,17 +42,44 @@ const Wrapper = styled.section`
         max-width: 120rem;
     }
     .card {
-        border: 0.1rem solid rgb(170 170 170 / 40%);
-        .card-data {
-            padding: 0 2rem;
+    border: 0.1rem solid rgb(170 170 170 / 40%);
+    .card-data-wrapper {
+        height: 300px; /* altura fixa */
+        overflow: hidden; /* esconder conteúdo que ultrapassa a altura */
+        margin-bottom: 5%;
+    }
+    .card-data {
+        padding: 0 2rem;
+        height: 100%; /* ocupar toda a altura da div .card-data-wrapper */
+        display: flex;
+        flex-direction: column;
+    }
+    h3 {
+        margin: 2rem 0;
+        font-weight: 300;
+        font-size: 2.4rem;
+    }
+    .description-wrapper {
+        overflow: auto; /* permitir que o texto da descrição role dentro da div */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-        h3 {
-            margin: 2rem 0;
-            font-weight: 300;
-            font-size: 2.4rem;
+        ::-webkit-scrollbar-track {
+            background: #d7d7d7;
+            border-radius: 8px;
         }
-        .btn {
-        margin: 2rem auto;
+        ::-webkit-scrollbar-thumb {
+            background-color: #6254f3;
+            border-radius: 8px;
+            cursor: pointer;
+            height: 2%;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #7c7c7f;
+        }
+    }
+    .btn {
+        margin: 2rem auto 0;
         background-color: rgb(0 0 0 / 0%);
         border: 0.1rem solid rgb(98 84 243);
         display: flex;
@@ -57,10 +88,10 @@ const Wrapper = styled.section`
         color: rgb(98 84 243);
         font-size: 1.4rem;
         &:hover {
-            background-color: rgb(98 84 243);
-            color: #fff;
+        background-color: rgb(98 84 243);
+        color: #fff;
         }
-        }
+    }
     }
     figure {
         width: auto;
