@@ -1,25 +1,33 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../styles';
-import { useContext } from 'react';
-import { ContextApp } from '../context';
+interface HeroSectionProps {
+    showP?: boolean,
+    name?: string
+    description?: string
+    img: string,
+    txtBtn?: string,
+    to?: string
+}
 
-export const HeroSection = () => {
+export const HeroSection = ({ showP = false, description, img, name = 'Gabriel', txtBtn = 'contratar', to = '/contato' }: HeroSectionProps) => {
 
-    const { name, img } = useContext(ContextApp)
-
+    const isRoute = to.startsWith('/')
+    
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
                 <div className="section-hero-data">
-                    <p className="hero-top-data">esse sou eu</p>
+                    {showP && <p className="hero-top-data">esse sou eu</p>}
                     <h1 className="hero-heading">{name}</h1>
                     <p className="hero-para">
-                        Me chamo {name}, tenho 20 anos. Estudante de Eng. De Software, programador e apaixonado por tecnologia. Um dev. FullStack focado na stack de JavaScript. 
+                        {description}
                     </p>
-                    <Button className="btn hireme-btn">
-                        <NavLink to="/contato"> contratar </NavLink>
-                    </Button>
+                    <NavLink to={`${to}`} target={isRoute ? '_self' :'_blank'}>
+                        <Button className="btn hireme-btn" >
+                            {txtBtn}
+                        </Button>
+                    </NavLink>
                 </div>
                 <div className="section-hero-image">
                     <picture>

@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { projects } from "../utils"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../styles";
 
 export const Services = () => {
+
+    const navigate = useNavigate()
 
     return (
         <Wrapper className="section">
@@ -12,7 +14,7 @@ export const Services = () => {
                 {projects.map((project) => {
                     const { description, id, img, link, name } = project;
                     return (
-                        <div key={id} className="card">
+                        <div key={id} className="card" onClick={() => navigate(`/projeto/${id}`)}>
                             <figure>
                                 <img src={img} alt={name}/>
                             </figure>

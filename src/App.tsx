@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import { DefaultTheme, ThemeProvider } from "styled-components";
 import { Main } from "./layout"
-import { About, Contact, Error, Home, Services } from "./pages"
+import { About, Contact, Error, Home, Project, Services } from "./pages"
 import { ContextAppProvider } from "./context";
 import { GlobalStyle } from "./GlobalStyle";
 import { GoToTop } from "./components";
@@ -25,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: '/projetos',
         element: <Services />,
+        errorElement: <Error />
+      },
+      {
+        path: '/projeto/:id',
+        element: <Project />,
         errorElement: <Error />
       },
       {

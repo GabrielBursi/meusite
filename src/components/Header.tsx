@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <MainHeader>
             <NavLink to='/'>
-                <img alt="" src=""/>
+                <h1>GB</h1>
             </NavLink>
             <Navbar/>
         </MainHeader>
