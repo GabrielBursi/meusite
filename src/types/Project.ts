@@ -13,4 +13,4 @@ export type Technologies = {
     level?: number,
 }
 
-type nameTechnologies =  "API" | "Chakra UI" | "Express" | "GraphQL" | "MongoDB" | "MySQL" | "Material UI" | "Next" | "Node" | "React" | "TypeScript"
+type nameTechnologies =  "API" | "Chakra UI" | "Express" | "GraphQL" | "MongoDB" | "MySQL" | "Material UI" | "Next" | "Node" | "React" | "TypeScript" | "React Router Dom"

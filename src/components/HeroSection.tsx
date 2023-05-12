@@ -32,7 +32,7 @@ export const HeroSection = ({ project, showP = false, txtBtn = 'contratar', to =
                 </div>
                 <div className="section-hero-image">
                     <picture>
-                        <img src={project.img} alt="hero image" className="hero-img " />
+                        <img src={project.img} alt="hero image" className={!showTechnologies ? "hero-img" : "hero-img-2"} />
                     </picture>
                     {showTechnologies &&
                         <div className='technologies'>
@@ -100,14 +100,16 @@ const Wrapper = styled.section`
     }
     picture {
         text-align: center;
-        img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-        }
     }
     .hero-img {
         max-width: 80%;
+    }
+    .hero-img-2{
+        max-width: 80%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+
     }
     @media (max-width: ${({ theme }) => theme.media.mobile}) {
         .grid {

@@ -9,6 +9,7 @@ import graphqlLogo from './graphql.png'
 import expressLogo from './express.png'
 import chakrauiLogo from './chakraui.png'
 import apiLogo from './api.png'
+import reactRouterDom from './react-router-dom.png'
 
 export const tecnologias = {
     reactLogo,
@@ -21,5 +22,7 @@ export const tecnologias = {
     graphqlLogo,
     expressLogo,
     chakrauiLogo,
-    apiLogo
+    apiLogo,
+    reactRouterDom,
+
 }

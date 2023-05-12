@@ -84,8 +84,8 @@ export const projects: ProjectsData[] = [
                 img: tecnologias.reactLogo
             },
             {
-                name: "TypeScript",
-                img: tecnologias.typescriptLogo
+                name: "React Router Dom",
+                img: tecnologias.reactRouterDom
             }
         ]
     },
