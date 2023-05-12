@@ -12,11 +12,10 @@ export const Project = () => {
   return (
     <>
       <HeroSection
-        img={projectFind.img}
-        description={projectFind.description}
-        name={projectFind.name}
+        project={projectFind}
         txtBtn="acessar"
         to={projectFind.link}
+        showTechnologies
       />
     </>
   )

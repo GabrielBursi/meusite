@@ -1,29 +1,30 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../styles';
+import { ProjectsData } from '../types';
+import { LogoTech } from './LogoTech';
 interface HeroSectionProps {
+    project: ProjectsData
     showP?: boolean,
-    name?: string
-    description?: string
-    img: string,
     txtBtn?: string,
-    to?: string
+    to?: string,
+    showTechnologies?: boolean
 }
 
-export const HeroSection = ({ showP = false, description, img, name = 'Gabriel', txtBtn = 'contratar', to = '/contato' }: HeroSectionProps) => {
+export const HeroSection = ({ project, showP = false, txtBtn = 'contratar', to = '/contato', showTechnologies = false }: HeroSectionProps) => {
 
     const isRoute = to.startsWith('/')
-    
+
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
                 <div className="section-hero-data">
                     {showP && <p className="hero-top-data">esse sou eu</p>}
-                    <h1 className="hero-heading">{name}</h1>
+                    <h1 className="hero-heading">{project.name}</h1>
                     <p className="hero-para">
-                        {description}
+                        {project.description}
                     </p>
-                    <NavLink to={`${to}`} target={isRoute ? '_self' :'_blank'}>
+                    <NavLink to={`${to}`} target={isRoute ? '_self' : '_blank'}>
                         <Button className="btn hireme-btn" >
                             {txtBtn}
                         </Button>
@@ -31,8 +32,18 @@ export const HeroSection = ({ showP = false, description, img, name = 'Gabriel',
                 </div>
                 <div className="section-hero-image">
                     <picture>
-                        <img src={img} alt="hero image" className="hero-img " />
+                        <img src={project.img} alt="hero image" className="hero-img " />
                     </picture>
+                    {showTechnologies &&
+                        <div className='technologies'>
+                            <h2 className="hero-sub-heading">Tecnologias Usadas</h2>
+                            <div className="grid-technologies">
+                                {project.technologies.map(tec =>
+                                    <LogoTech key={tec.img} img={tec.img} name={tec.name} />
+                                )}
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </Wrapper>
@@ -66,11 +77,34 @@ const Wrapper = styled.section`
     }
     .section-hero-image {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: start;
+        gap: 5%;
+        align-items: center;
+    }
+    .technologies{
+        width: 80%;
+        height: auto;
+    }
+    .hero-sub-heading {
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        margin-bottom: 4%;
+    }
+    .grid-technologies {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
         align-items: center;
     }
     picture {
         text-align: center;
+        img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+        }
     }
     .hero-img {
         max-width: 80%;
