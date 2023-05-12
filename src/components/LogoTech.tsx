@@ -5,9 +5,7 @@ export const LogoTech = ({ img, name }: Technologies) => {
     return (
         <LogoWrapper>
             <div className="logo">
-                <div className="img-container">
-                    <img src={img} alt={name} width="100%" height="100%" draggable={false} loading="lazy"/>
-                </div>
+                <img src={img} alt={name} width="80" height="80" draggable={false} loading="lazy"/>
                 <span>{name}</span>
             </div>
         </LogoWrapper>
@@ -23,14 +21,6 @@ const LogoWrapper = styled.div`
         justify-content: center;
         align-items: center;
         gap: 2%;
-
-        .img-container{
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
         span{
             font-weight: 500;

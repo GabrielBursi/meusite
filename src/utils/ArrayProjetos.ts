@@ -114,4 +114,37 @@ export const projects: ProjectsData[] = [
             },
         ]
     },
+    {
+        id: 5,
+        name: "My Trips",
+        description: "My Trips é um projeto feito usando Next com TypeScript, StyledComponents, e a biblioteca leaflet, juntamente com um CMS como API. A aplicação consiste em um mapa completamente dinâmico, onde o usuário pode clicar nos pins que levam para uma página com informações e fotos daquele local. Além disso, o usuário pode adicionar novas localidades no mapa. Com este projeto, tive a oportunidade de trabalhar com várias tecnologias modernas e aprimorar minhas habilidades em desenvolvimento web.",
+        img: projetos.img5,
+        link: "https://next-maps-gabriel.vercel.app",
+        technologies: [
+            {
+                name: "Next",
+                img: tecnologias.nextLogo
+            },
+            {
+                name: "TypeScript",
+                img: tecnologias.typescriptLogo
+            },
+            {
+                name: "GraphQL",
+                img: tecnologias.graphqlLogo
+            },
+            {
+                name: "Leaflet",
+                img: tecnologias.leafletLogo
+            },
+            {
+                name: "Styled Components",
+                img: tecnologias.styledcomponentsLogo
+            },
+            {
+                name: "CMS",
+                img: tecnologias.cmsLogo
+            },
+        ]
+    },
 ];

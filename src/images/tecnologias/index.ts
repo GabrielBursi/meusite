@@ -9,6 +9,9 @@ import graphqlLogo from './graphql.png'
 import expressLogo from './express.png'
 import chakrauiLogo from './chakraui.png'
 import apiLogo from './api.png'
+import leafletLogo from './leaflet.png'
+import cmsLogo from './cms.png'
+import styledcomponentsLogo from './styled-components.png'
 import reactRouterDom from './react-router-dom.png'
 
 export const tecnologias = {
@@ -24,5 +27,8 @@ export const tecnologias = {
     chakrauiLogo,
     apiLogo,
     reactRouterDom,
+    leafletLogo,
+    cmsLogo,
+    styledcomponentsLogo
 
 }
