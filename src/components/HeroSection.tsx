@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../styles';
 import { ProjectsData } from '../types';
 import { LogoTech } from './LogoTech';
+import { goToTop } from '../utils';
 interface HeroSectionProps {
     project: ProjectsData
     showP?: boolean,
@@ -15,17 +16,21 @@ export const HeroSection = ({ project, showP = false, txtBtn = 'contratar', to =
 
     const isRoute = to.startsWith('/')
 
+    const paragraphs = project.description.split('\n');
+
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
                 <div className="section-hero-data">
                     {showP && <p className="hero-top-data">esse sou eu</p>}
                     <h1 className="hero-heading">{project.name}</h1>
-                    <p className="hero-para">
-                        {project.description}
-                    </p>
+                    {paragraphs.map((paragraph, index) => (
+                        <p className="hero-para" key={index}>
+                            {paragraph}
+                        </p>
+                    ))}
                     <NavLink to={`${to}`} target={isRoute ? '_self' : '_blank'}>
-                        <Button className="btn hireme-btn" >
+                        <Button className="btn hireme-btn" onClick={goToTop}>
                             {txtBtn}
                         </Button>
                     </NavLink>
@@ -59,6 +64,7 @@ const Wrapper = styled.section`
     }
     .btn {
         max-width: 16rem;
+        margin-top: 2rem;
     }
     .hero-top-data {
         text-transform: uppercase;
@@ -72,7 +78,6 @@ const Wrapper = styled.section`
     }
     .hero-para {
         margin-top: 1.5rem;
-        margin-bottom: 3.4rem;
         max-width: 60rem;
     }
     .section-hero-image {
@@ -102,7 +107,8 @@ const Wrapper = styled.section`
         text-align: center;
     }
     .hero-img {
-        max-width: 80%;
+        border-radius: 50%;
+        height: 400px;
     }
     .hero-img-2{
         max-width: 80%;

@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
+import { goToTop } from "../utils";
 
-export const Error = () => {
+export const ErrorComponent = () => {
     return (
         <Wrapper>
             <img src="https://raw.githubusercontent.com/thapatechnical/reactmultipage/b27bff8403d3729dcd652cff79d85c878a3f211a/public/images/error.svg" alt="error" />
             <NavLink to="/">
-                <Button className="btn"> Go Back</Button>
+                <Button className="btn" onClick={goToTop}>Voltar</Button>
             </NavLink>
         </Wrapper>
     )

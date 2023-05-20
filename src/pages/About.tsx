@@ -1,19 +1,19 @@
-import { useContext, useEffect } from "react";
 import { HeroSection } from "../components"
-import { ContextApp } from "../context";
 import { ProjectsData } from "../types";
+import { perfil } from "../images";
 
 export const About = () => {
 
-    const { updateAboutPage } = useContext(ContextApp)
-
-    useEffect(() => {
-        updateAboutPage()
-    }, []);
+    const description = `
+    Me chamo Gabriel, tenho 20 anos. Programador e apaixonado por tecnologia. Meu primeiro contato com programação foi há aproximadamente três anos atrás, desde lá tive algumas desanimadas no meio do caminho, mas há mais de um ano estou muito focado e me dedicando muito para aprendizagem, cada dia estou melhorando! 
+    Além da paixão pela programação, sou um entusiasta da colaboração e do aprendizado contínuo. Sempre estou em busca de oportunidades para expandir meus conhecimentos e trabalhar em equipe, visando alcançar resultados excepcionais.
+    Minha sede de conhecimento é insaciável, e estou sempre em busca de novas tecnologias e tendências do mercado. Essa curiosidade constante me impulsiona a me manter atualizado e a explorar soluções inovadoras para os desafios que encontro.
+    Sou uma pessoa sociável e comunicativa. Valorizo a importância de estabelecer e manter relacionamentos profissionais saudáveis, baseados na confiança e no respeito mútuo.
+    `
 
     const project: ProjectsData = {
-        description: "Me chamo Gabriel, tenho 20 anos. Estudante de Eng. De Software, programador e apaixonado por tecnologia. Um dev. FullStack focado na stack de JavaScript.",
-        img: "https://raw.githubusercontent.com/thapatechnical/reactmultipage/b27bff8403d3729dcd652cff79d85c878a3f211a/public/images/about1.svg",
+        description,
+        img: perfil.fotoAbout,
         name: "Gabriel",
         id: 1,
         link: '',

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { projects } from "../utils"
+import { goToTop, projects } from "../utils"
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../styles";
 
@@ -14,9 +14,12 @@ export const Services = () => {
                 {projects.map((project) => {
                     const { description, id, img, link, name } = project;
                     return (
-                        <div key={id} className="card" onClick={() => navigate(`/projeto/${id}`)}>
+                        <div key={id} className="card" onClick={() => {
+                            navigate(`/projeto/${id}`)
+                            goToTop()
+                        }}>
                             <figure>
-                                <img src={img} alt={name}/>
+                                <img src={img} alt={name} />
                             </figure>
                             <div className="card-data-wrapper">
                                 <div className="card-data">
@@ -44,41 +47,46 @@ const Wrapper = styled.section`
         max-width: 120rem;
     }
     .card {
-    border: 0.1rem solid rgb(170 170 170 / 40%);
-    .card-data-wrapper {
-        height: 300px; /* altura fixa */
-        overflow: hidden; /* esconder conteúdo que ultrapassa a altura */
-        margin-bottom: 5%;
-    }
-    .card-data {
-        padding: 0 2rem;
-        height: 100%; /* ocupar toda a altura da div .card-data-wrapper */
-        display: flex;
-        flex-direction: column;
-    }
-    h3 {
-        margin: 2rem 0;
-        font-weight: 300;
-        font-size: 2.4rem;
-    }
-    .description-wrapper {
-        overflow: auto; /* permitir que o texto da descrição role dentro da div */
-        ::-webkit-scrollbar {
-            width: 6px;
+        border: 0.1rem solid rgb(170 170 170 / 40%);
+        cursor: pointer;
+        transition: .6s;
+        &:hover{
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         }
-        ::-webkit-scrollbar-track {
-            background: #d7d7d7;
-            border-radius: 8px;
+        .card-data-wrapper {
+            height: 300px; /* altura fixa */
+            overflow: hidden; /* esconder conteúdo que ultrapassa a altura */
+            margin-bottom: 5%;
         }
-        ::-webkit-scrollbar-thumb {
-            background-color: #6254f3;
-            border-radius: 8px;
-            cursor: pointer;
-            height: 2%;
+        .card-data {
+            padding: 0 2rem;
+            height: 100%; /* ocupar toda a altura da div .card-data-wrapper */
+            display: flex;
+            flex-direction: column;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #7c7c7f;
+        h3 {
+            margin: 2rem 0;
+            font-weight: 300;
+            font-size: 2.4rem;
         }
+        .description-wrapper {
+            overflow: auto; /* permitir que o texto da descrição role dentro da div */
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #d7d7d7;
+                border-radius: 8px;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #6254f3;
+                border-radius: 8px;
+                cursor: pointer;
+                height: 2%;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #7c7c7f;
+            }
     }
     .btn {
         margin: 2rem auto 0;

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { Button } from "../styles";
+import { goToTop } from "../utils";
 
 export const Footer = () => {
 
@@ -25,7 +26,7 @@ export const Footer = () => {
 
                     <div className="contact-short-btn">
                         <NavLink to="/projetos">
-                            <Button>começar</Button>
+                            <Button onClick={goToTop}>começar</Button>
                         </NavLink>
                     </div>
                 </div>
